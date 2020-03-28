@@ -4,6 +4,7 @@
   "author": "NQ Framework",
   "description": "A client application for managing nq framework and connecting to the on premise database",
   "main": "dist/electron/main",
+  "license": "MIT",
   "files": [
     "dist",
     "*.js"
@@ -27,6 +28,9 @@
   "private": true,
   "config": {
     "forge": {
+      "electronPackagerConfig": {
+        "asar": "true"
+      },
       "packagerConfig": {},
       "makers": [
         {
