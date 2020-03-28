@@ -2,12 +2,14 @@ import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { ElectronService } from 'ngx-electron';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
       declarations: [AppComponent],
+      schemas: [NO_ERRORS_SCHEMA],
       providers: [
         { provide: ElectronService, useValue: { isElectronApp: false } }
       ]
@@ -30,8 +32,8 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain(
-      'nq-connector app is running!'
+    expect(compiled.querySelector('h1').textContent).toContain(
+      'under construction'
     );
   });
 });
