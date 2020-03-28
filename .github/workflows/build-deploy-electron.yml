@@ -30,3 +30,7 @@ jobs:
     - run: npm run package:electron
       env:
         CI: true
+    - uses: actions/upload-artifact@v1.0.0
+      with:
+        name: electron-executable
+        path: artifacts
