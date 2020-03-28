@@ -1,20 +1,55 @@
 {
   "name": "nq-connector",
   "version": "0.0.0",
+  "main": "dist/electron/main",
+  "files": [
+    "dist",
+    "*.js"
+  ],
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build --base-href ./",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "build": "npm run build:ui && npm run build:electron",
+    "build:ui": "ng build --base-href ./",
+    "build:electron": "tsc -p ./electron/tsconfig.json",
     "test": "ng test",
     "test:ci": "ng test --watch=false --browsers=ChromeHeadless",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "build:electron": "tsc -p electron/tsconfig.json",
-    "lint:electron": "tslint -c electron/tslint.json -p electron/tsconfig.json",
-    "start:electron": "npm run build:electron && electron ./dist/electron/main.js",
-    "package:electron": "electron-packager ./dist --out ./artifacts/"
+    "lint": "npm run lint:ui && npm run lint:electron",
+    "lint:ui": "ng lint",
+    "lint:electron": "tslint -p ./electron/tsconfig.json -c ./tslint.json",
+    "e2e": "ng e2e"
   },
   "private": true,
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "nq-connector"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  },
   "dependencies": {
     "@angular/animations": "~9.1.0",
     "@angular/common": "~9.1.0",
@@ -27,9 +62,15 @@
     "ngx-electron": "^2.2.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.10.2",
+    "electron-squirrel-startup": "^1.0.0"
   },
   "devDependencies": {
+    "@electron-forge/cli": "6.0.0-beta.50",
+    "@electron-forge/maker-deb": "6.0.0-beta.50",
+    "@electron-forge/maker-rpm": "6.0.0-beta.50",
+    "@electron-forge/maker-squirrel": "6.0.0-beta.50",
+    "@electron-forge/maker-zip": "6.0.0-beta.50",
     "@angular-devkit/build-angular": "~0.901.0",
     "@angular/cli": "~9.1.0",
     "@angular/compiler-cli": "~9.1.0",

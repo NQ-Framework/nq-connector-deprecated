@@ -1,12 +1,19 @@
 {
   "compilerOptions": {
+    "allowJs": true,
     "module": "commonjs",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
     "noImplicitAny": true,
     "sourceMap": true,
-    "outDir": "../dist/electron",
     "baseUrl": ".",
+    "outDir": "../dist/electron",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
     "paths": {
-      "*": ["node_modules/*"]
+      "*": [
+        "node_modules/*"
+      ]
     }
   },
   "include": [
