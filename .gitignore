@@ -5,6 +5,7 @@
 /electron/dist
 /tmp
 /out-tsc
+/artifacts
 # Only exists if Bazel was run
 /bazel-out
 

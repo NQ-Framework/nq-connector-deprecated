@@ -17,10 +17,10 @@ function createWindow() {
   });
 
   // and load the index.html of the app.
-  mainWindow.loadURL('http://localhost:4200/');
-  // mainWindow.loadFile(
-  //   path.join(__dirname, '../../dist/nq-connector/index.html')
-  // );
+  // mainWindow.loadURL('http://localhost:4200/');
+   mainWindow.loadFile(
+     path.join(__dirname, '../nq-connector/index.html')
+   );
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
