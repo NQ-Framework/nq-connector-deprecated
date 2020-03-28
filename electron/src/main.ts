@@ -10,15 +10,17 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     height: 600,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
+      preload: path.join(__dirname, 'preload.js'),
+      nodeIntegration: true
     },
     width: 800
   });
 
   // and load the index.html of the app.
-  mainWindow.loadFile(
-    path.join(__dirname, '../../dist/nq-connector/index.html')
-  );
+  mainWindow.loadURL('http://localhost:4200/');
+  // mainWindow.loadFile(
+  //   path.join(__dirname, '../../dist/nq-connector/index.html')
+  // );
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
