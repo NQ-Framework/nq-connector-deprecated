@@ -6,6 +6,6 @@ import { AnimationComponent } from './animation.component';
   declarations: [AnimationComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [CommonModule],
-  exports: [AnimationComponent]
+  exports: [AnimationComponent],
 })
 export class AnimationModule {}

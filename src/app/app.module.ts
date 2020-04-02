@@ -13,9 +13,9 @@ import { AnimationModule } from './animation/animation.module';
     BrowserModule,
     AppRoutingModule,
     NgxElectronModule,
-    AnimationModule
+    AnimationModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

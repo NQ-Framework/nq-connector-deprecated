@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'animation-component',
+  selector: 'app-animation-component',
   templateUrl: './animation.component.html',
-  styleUrls: ['./animation.component.scss']
+  styleUrls: ['./animation.component.scss'],
 })
 export class AnimationComponent implements OnInit {
   @Input()

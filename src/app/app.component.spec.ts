@@ -11,8 +11,8 @@ describe('AppComponent', () => {
       declarations: [AppComponent],
       schemas: [NO_ERRORS_SCHEMA],
       providers: [
-        { provide: ElectronService, useValue: { isElectronApp: false } }
-      ]
+        { provide: ElectronService, useValue: { isElectronApp: false } },
+      ],
     }).compileComponents();
   }));
 
@@ -33,7 +33,7 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain(
-      'under construction'
+      'under construction',
     );
   });
 });
