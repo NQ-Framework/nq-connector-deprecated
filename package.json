@@ -23,7 +23,13 @@
     "lint": "npm run lint:ui && npm run lint:electron",
     "lint:ui": "ng lint",
     "lint:electron": "tslint -p ./electron/tsconfig.json -c ./tslint.json",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "git add -A src",
+    "postversion": "git push && git push --tags"
+
   },
   "private": true,
   "config": {
