@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "nq-framework"
+  },
+  "targets": {
+    "nq-framework": {
+      "hosting": {
+        "nq-connector": [
+          "nq-framework"
+        ]
+      }
+    }
   }
 }
