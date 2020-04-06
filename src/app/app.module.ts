@@ -8,12 +8,13 @@ import { AppComponent } from './app.component';
 import { NgxElectronModule } from 'ngx-electron';
 import { AnimationModule } from './animation/animation.module';
 import { AngularFireModule } from '@angular/fire';
-import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthPageComponent } from './auth-page/auth-page.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     HomePageComponent,
     FooterComponent,
     PageNotFoundComponent,
+    AuthPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,4 +37,4 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

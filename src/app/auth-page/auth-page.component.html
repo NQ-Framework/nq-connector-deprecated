@@ -1,0 +1,23 @@
+<h1>NQ Connector is currently under construction</h1>
+<div *ngIf="firebaseAuth.user | async as user; else showLogin">
+  <h1>Hello {{ user.displayName }}!</h1>
+  <div *ngIf="!hasProvider(user, 'google.com')">
+    <button (click)="linkGoogle(user)">Link with Google</button>
+  </div>
+  <button (click)="logout()">Logout</button>
+</div>
+<ng-template #showLogin>
+  <p>Please login.</p>
+  <button (click)="login()">Login with Google</button>
+  <button (click)="loginUP()">Login with Username and password</button>
+
+  <p>OR</p>
+  <input [(ngModel)]="email" placeholder="email" type="email" required />
+  <input
+    [(ngModel)]="password"
+    placeholder="password"
+    type="password"
+    required
+  />
+  <button (click)="signUp()">Create an account</button>
+</ng-template>
