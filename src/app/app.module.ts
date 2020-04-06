@@ -16,7 +16,13 @@ import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
-  declarations: [AppComponent, NavigationBarComponent, HomePageComponent, FooterComponent, PageNotFoundComponent],
+  declarations: [
+    AppComponent,
+    NavigationBarComponent,
+    HomePageComponent,
+    FooterComponent,
+    PageNotFoundComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -29,4 +35,4 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
