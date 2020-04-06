@@ -10,9 +10,13 @@ import { AnimationModule } from './animation/animation.module';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { FooterComponent } from './footer/footer.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, NavigationBarComponent, HomePageComponent, FooterComponent, PageNotFoundComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -25,4 +29,4 @@ import { environment } from '../environments/environment';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
