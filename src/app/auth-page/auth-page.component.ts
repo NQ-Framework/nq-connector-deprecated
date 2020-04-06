@@ -8,14 +8,12 @@ import { auth } from 'firebase/app';
   styleUrls: ['./auth-page.component.scss'],
 })
 export class AuthPageComponent implements OnInit {
-
   email = '';
   password = '';
 
-  constructor(public firebaseAuth: AngularFireAuth) { }
+  constructor(public firebaseAuth: AngularFireAuth) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   async loginUP() {
     try {
@@ -38,7 +36,7 @@ export class AuthPageComponent implements OnInit {
     this.firebaseAuth.signInWithPopup(new auth.GoogleAuthProvider());
   }
   linkGoogle(user: firebase.User) {
-    user.linkWithPopup(new auth.GoogleAuthProvider()).then(() => { });
+    user.linkWithPopup(new auth.GoogleAuthProvider()).then(() => {});
   }
   logout() {
     this.firebaseAuth.signOut();
@@ -59,5 +57,4 @@ export class AuthPageComponent implements OnInit {
   hasProvider(user: firebase.User, provider: string): boolean {
     return !!user.providerData.find((p) => p.providerId === provider);
   }
-
 }

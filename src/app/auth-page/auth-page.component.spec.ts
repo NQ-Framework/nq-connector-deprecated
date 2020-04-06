@@ -10,9 +10,8 @@ describe('AuthPageComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [AuthPageComponent],
-      providers: [{ provide: AngularFireAuth, useValue: {} }]
-    })
-      .compileComponents();
+      providers: [{ provide: AngularFireAuth, useValue: {} }],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

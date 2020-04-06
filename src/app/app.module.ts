@@ -37,4 +37,4 @@ import { AuthPageComponent } from './auth-page/auth-page.component';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

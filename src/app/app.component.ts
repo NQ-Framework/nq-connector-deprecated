@@ -8,7 +8,7 @@ import { ElectronService } from 'ngx-electron';
 export class AppComponent {
   title = 'nq-connector';
 
-  constructor(electron: ElectronService, ) {
+  constructor(electron: ElectronService) {
     if (electron.isElectronApp) {
       electron.clipboard.writeText('ovo je sad u clipboardu');
       console.log('je el app i stavih u clip');
