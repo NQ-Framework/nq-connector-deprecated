@@ -76,7 +76,7 @@
     "angular-mocks": "^1.7.9",
     "bulma": "^0.8.1",
     "electron-squirrel-startup": "^1.0.0",
-    "firebase": "^7.13.2",
+    "firebase": "^7.14.0",
     "ngx-electron": "^2.2.0",
     "rxjs": "~6.5.5",
     "tslib": "^1.10.0",
