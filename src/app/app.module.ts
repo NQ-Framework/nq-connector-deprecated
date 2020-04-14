@@ -15,6 +15,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthPageComponent } from './auth-page/auth-page.component';
+import { CommonModule } from './common/common.module';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AuthPageComponent } from './auth-page/auth-page.component';
     NgxElectronModule,
     AnimationModule,
     FormsModule,
+    CommonModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
   ],

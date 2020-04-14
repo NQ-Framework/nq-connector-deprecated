@@ -1,0 +1,8 @@
+<div>
+  <span i18n>Choose app language:</span>
+  <div *ngFor="let language of supportedLanguages">
+    <a href (click)="changeLanguage(language.code)">
+      {{ language.name }}
+    </a>
+  </div>
+</div>
