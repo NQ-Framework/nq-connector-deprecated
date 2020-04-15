@@ -16,6 +16,8 @@ import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthPageComponent } from './auth-page/auth-page.component';
 import { CommonModule } from './common/common.module';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { InterceptorService } from './interceptor.service';
 
 @NgModule({
   declarations: [
@@ -33,10 +35,13 @@ import { CommonModule } from './common/common.module';
     AnimationModule,
     FormsModule,
     CommonModule,
+    HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
