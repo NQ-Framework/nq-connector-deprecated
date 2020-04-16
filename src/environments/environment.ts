@@ -6,7 +6,9 @@ import { IEnvironment } from './environment.interface';
 
 export const environment: IEnvironment = {
   production: false,
-  apiUrl: 'http://localhost:3000/v1',
+  // apiUrl: 'http://localhost:3000/v1',
+  apiUrl: 'https://server.nqframework.com/v1',
+  // apiUrl: 'https://14802de6.ngrok.io/v1',
   firebaseConfig: {
     apiKey: 'AIzaSyB4L2ujEtbLHKgzk1_LiDuM6UQO4M5NZkE',
     authDomain: 'nq-framework.firebaseapp.com',

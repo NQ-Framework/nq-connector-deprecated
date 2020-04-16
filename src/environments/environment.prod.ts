@@ -2,7 +2,7 @@ import { IEnvironment } from './environment.interface';
 
 export const environment: IEnvironment = {
   production: true,
-  apiUrl: 'https://nq-server.azurewebsites.net/v1',
+  apiUrl: 'https://server.nqframework.com/v1',
   firebaseConfig: {
     apiKey: 'AIzaSyB4L2ujEtbLHKgzk1_LiDuM6UQO4M5NZkE',
     authDomain: 'nq-framework.firebaseapp.com',
