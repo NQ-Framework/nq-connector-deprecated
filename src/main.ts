@@ -19,7 +19,7 @@ const storageLanguage = localStorage.getItem('language_code');
 const language = storageLanguage == null ? 'rs' : storageLanguage;
 const translationDataPromise =
   language !== 'en'
-    ? getTranslations(`/assets/i18n/${language}.json`)
+    ? getTranslations(`assets/i18n/${language}.json`)
     : Promise.resolve({} as ParsedTranslationBundle);
 
 translationDataPromise.then((data: ParsedTranslationBundle) => {

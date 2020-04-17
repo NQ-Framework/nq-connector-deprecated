@@ -15,12 +15,13 @@ const createWindow = () => {
     height: 600,
     width: 800,
     webPreferences: {
-      nodeIntegration: true
-    }
+      nodeIntegration: true,
+    },
   });
 
   // and load the index.html of the app.
-  mainWindow.loadFile(path.join(__dirname, '../nq-connector/index.html'));
+  // mainWindow.loadFile(path.join(__dirname, '../nq-connector/index.html'));
+  mainWindow.loadURL('http://localhost:4200');
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
