@@ -1,55 +1,43 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { ConfigService } from '../config.service';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { first, flatMap } from 'rxjs/operators';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { first, flatMap, tap, single } from 'rxjs/operators';
+import { BehaviorSubject } from 'rxjs';
+
+interface Item {
+  name: string;
+  id: number;
+  returnValue: string;
+  firebaseId: string;
+}
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss'],
 })
-export class HomePageComponent {
-  constructor(
-    private client: HttpClient,
-    private config: ConfigService,
-    private auth: AngularFireAuth,
-  ) {}
-  testPing() {
-    this.client.post(this.config.apiUrl + '/actions/ping', {}).subscribe({
-      next: (res) => {
-        console.log('stigao ', res);
-      },
-      error: (er) => {
-        console.log('err ping', er);
-      },
-    });
-  }
-  terminateConnector() {
-    this.client.post(this.config.apiUrl + '/actions/terminate', {}).subscribe({
-      next: (res) => {
-        console.log('stig ', res);
-      },
-      error: (er) => {
-        console.log('err terminate', er);
-      },
-    });
+export class HomePageComponent implements OnInit {
+  pendingDocuments$: BehaviorSubject<Item[]> = new BehaviorSubject([]);
+  retVal = 'OMG WTF BBQ';
+  constructor(private firestore: AngularFirestore) {}
+  ngOnInit(): void {
+    this.firestore
+      .collection<Item>('items', (ref) => ref.where('returnValue', '==', null))
+      .valueChanges()
+      .pipe(tap((values) => this.pendingDocuments$.next(values)))
+      .subscribe();
   }
 
-  testConnector() {
-    this.auth.authState
-      .pipe(
-        first(),
-        flatMap((u) => u.getIdToken()),
-      )
-      .subscribe((token) => {
-        const evSource = new EventSource(
-          `${this.config.apiUrl}/actions/recieve?token=${token}`,
-          { withCredentials: true },
-        );
-        evSource.onmessage = (msg) => {
-          console.log('got msg! ', msg);
-        };
+  sendData(id: number) {
+    console.log('finding by id: ', id);
+    this.firestore
+      .collection<Item>('items', (ref) => ref.where('id', '==', id))
+      .valueChanges({ idField: 'firebaseId' })
+      .pipe(first())
+      .subscribe((docs) => {
+        console.log('got back: ', docs);
+        this.firestore
+          .doc('items/' + docs[0].firebaseId)
+          .update({ returnValue: this.retVal });
       });
   }
 }

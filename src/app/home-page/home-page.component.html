@@ -1,23 +1,44 @@
 <section class="hero">
   <div class="hero-body">
     <div class="container has-text-centered">
-      <h1 class="title is-spaced">The New Old Internet</h1>
-      <button (click)="testConnector()">Nakači se na konektor!</button>
+      <h1 class="title is-spaced">
+        Testiraj magiju komunikacije, ovo su dokumenta koja čekaju odgovor:
+      </h1>
+      <label
+        >vrednost za slanje:
+        <input [(ngModel)]="retVal" type="text" />
+        <p>{{ retVal }}</p>
+      </label>
+      <table class="table">
+        <thead>
+          <th>Id</th>
+          <th>Name</th>
+          <th>dugmence</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let doc of pendingDocuments$ | async">
+            <td>{{ doc.id }}</td>
+            <td>{{ doc.name }}</td>
+            <td><button (click)="sendData(doc.id)">Pošalji</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- <button (click)="testConnector()">Nakači se na konektor!</button>
       <button (click)="testPing()">Testiraj Ping</button>
-      <button (click)="terminateConnector()">Ubij konekciju</button>
-      <h2 class="subtitle">
+      <button (click)="terminateConnector()">Ubij konekciju</button> -->
+      <!-- <h2 class="subtitle">
         Decentralized, secure, private. The PiperNet is on it's way to
         revolutionize every smartphone, PC, and smart-fridge near you.
       </h2>
       <div class="buttons is-centered">
         <a class="control button is-primary" href="#">Sign up for free</a
         ><a class="control button is-light" href="#">Read more</a>
-      </div>
+      </div>-->
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section" style="margin-top: 250px;">
   <div class="container">
     <h2 class="title has-text-centered">PiperNet Setup</h2>
     <div class="columns">
