@@ -18,7 +18,7 @@
         <h4 i18n="@@organizationDetails" class="title is-4">
           Organization Details
         </h4>
-        <form novalidate>
+        <form [formGroup]="organizationForm" (ngSubmit)="submitForm()">
           <div class="field is-grouped">
             <div class="control is-expanded">
               <div class="field">
@@ -29,7 +29,7 @@
                       class="input"
                       type="text"
                       placeholder=""
-                      value=""
+                      formControlName="name"
                       required
                     />
                   </label>
@@ -45,6 +45,7 @@
                   class="input"
                   type="email"
                   required
+                  formControlName="email"
                   placeholder="office@nqframework.com"
                 />
               </label>
@@ -58,6 +59,7 @@
                   class="input"
                   type="text"
                   i18n-placeholder="@@addressPlaceholder"
+                  formControlName="address1"
                   placeholder="1234 Main St"
                   required
                 />
@@ -71,6 +73,7 @@
                 <input
                   class="input"
                   type="text"
+                  formControlName="address2"
                   i18n-placeholder="@@address2Placeholder"
                   placeholder="Apartment or suite"
                 />
@@ -83,9 +86,9 @@
                 Country
               </label>
               <div class="select">
-                <select required class="full-width">
+                <select required formControlName="country" class="full-width">
                   <option value="" selected disabled>Choose...</option>
-                  <option value="">Serbia</option>
+                  <option value="Serbia">Serbia</option>
                 </select>
               </div>
             </div>
@@ -212,8 +215,8 @@
                   </div>
                 </div>
               </div>
-            </div></a
-          >
+            </div>
+          </a>
           <div class="list-item has-background-white">
             <div class="level is-mobile">
               <div class="level-left">

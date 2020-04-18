@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Organization } from '@nqframework/models';
+import { FormBuilder } from '@angular/forms';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { first, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-create-organization',
@@ -6,6 +11,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-organization.component.scss'],
 })
 export class CreateOrganizationComponent implements OnInit {
-  constructor() {}
+  organizationForm = this.fb.group({
+    name: [''],
+    address1: [''],
+    address2: [''],
+    email: [''],
+    country: [''],
+  });
+  constructor(
+    private fb: FormBuilder,
+    private firestore: AngularFirestore,
+    private auth: AngularFireAuth,
+  ) {}
   ngOnInit() {}
+
+  submitForm() {
+    this.auth.user
+      .pipe(
+        first(),
+        map((u) => u.uid),
+      )
+      .subscribe((uid) => {
+        const docValues = this.organizationForm.value;
+        this.firestore
+          .collection<Organization>('organizations')
+          .add({ ...docValues, createdBy: uid });
+      });
+  }
 }
