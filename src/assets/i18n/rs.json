@@ -1,6 +1,20 @@
 {
   "locale": "rs",
   "translations": {
-    "loginButtonText": "Uloguj se ili kreiraj nalog"
+    "loginButtonText": "Uloguj se ili kreiraj nalog",
+    "4599108100699445337": "Odaberite jezik aplikacije:",
+    "createOrganization": " Kreiranje Organizacije ",
+    "organizationDetails": " Detalji Organizacije ",
+    "organizationName": "Naziv Organizacije {$TAG_INPUT}",
+    "email": "Email {$TAG_INPUT}",
+    "addressPlaceholder": "Beogradska 1234",
+    "address": "Adresa {$TAG_INPUT}",
+    "address2Placeholder": "Sprat, stan",
+    "address2": "Adresa 2 {$TAG_INPUT}",
+    "country": " Država ",
+    "btnCreateOrganization": " Kreiraj Organizaciju ",
+    "organizationMembers": "Članovi organizacije",
+    "invitePeopleToOrganization": "Pozovite još članova u organizaciju",
+    "btnInvite": " Pozovi "
   }
 }

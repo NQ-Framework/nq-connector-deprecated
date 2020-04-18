@@ -1,6 +1,20 @@
 {
   "locale": "en",
   "translations": {
-    "loginButtonText": "Log in or create an account"
+    "4599108100699445337": "Choose app language:",
+    "loginButtonText": "Log in or create an account",
+    "createOrganization": " Create organization ",
+    "organizationDetails": " Organization Details ",
+    "organizationName": "Organization name {$TAG_INPUT}",
+    "email": "Email {$TAG_INPUT}",
+    "addressPlaceholder": "1234 Main St",
+    "address": "Address {$TAG_INPUT}",
+    "address2Placeholder": "Apartment or suite",
+    "address2": "Address 2 {$TAG_INPUT}",
+    "country": " Country ",
+    "btnCreateOrganization": " Create organization ",
+    "organizationMembers": "Organization members",
+    "invitePeopleToOrganization": "Invite more people to join your organization:",
+    "btnInvite": " Invite "
   }
 }

@@ -1,1 +1,264 @@
-<p>CREATE organization page</p>
+<section class="section">
+  <div class="container">
+    <div class="level">
+      <div class="level-item">
+        <figure class="image is-64x64">
+          <img
+            src="https://bulma.dev/placeholder/pictures/bg_square.svg?primary=00d1b2"
+            alt=""
+          />
+        </figure>
+      </div>
+    </div>
+    <h2 i18n="@@createOrganization" class="title has-text-centered">
+      Create organization
+    </h2>
+    <div class="columns">
+      <div class="column is-8">
+        <h4 i18n="@@organizationDetails" class="title is-4">
+          Organization Details
+        </h4>
+        <form novalidate>
+          <div class="field is-grouped">
+            <div class="control is-expanded">
+              <div class="field">
+                <div class="control">
+                  <label i18n="@@organizationName" class="label"
+                    >Organization name
+                    <input
+                      class="input"
+                      type="text"
+                      placeholder=""
+                      value=""
+                      required
+                    />
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <label i18n="@@email" class="label"
+                >Email
+                <input
+                  class="input"
+                  type="email"
+                  required
+                  placeholder="office@nqframework.com"
+                />
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <label i18n="@@address" class="label"
+                >Address
+                <input
+                  class="input"
+                  type="text"
+                  i18n-placeholder="@@addressPlaceholder"
+                  placeholder="1234 Main St"
+                  required
+                />
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <label i18n="@@address2" class="label"
+                >Address 2
+                <input
+                  class="input"
+                  type="text"
+                  i18n-placeholder="@@address2Placeholder"
+                  placeholder="Apartment or suite"
+                />
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <label i18n="@@country" class="label">
+                Country
+              </label>
+              <div class="select">
+                <select required class="full-width">
+                  <option value="" selected disabled>Choose...</option>
+                  <option value="">Serbia</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="field">
+            <div class="control">
+              <label class="checkbox">
+                <input type="checkbox" i18n="@@agreeToReceiveUpdates" />&nbsp; I
+                agree to receive occasional updates about NQ Framework
+              </label>
+            </div>
+          </div>
+          <hr />
+          <h4 class="title is-4">Payment</h4>
+          <div class="field">
+            <div class="control">
+              <label class="radio">
+                <input
+                  name="paymentMethod"
+                  type="radio"
+                  checked
+                  required
+                />&nbsp; Credit card
+              </label>
+            </div>
+            <div class="control">
+              <label class="radio">
+                <input name="paymentMethod" type="radio" required />&nbsp; Debit
+                card
+              </label>
+            </div>
+            <div class="control">
+              <label class="radio">
+                <input name="paymentMethod" type="radio" required />&nbsp;
+                Paypal
+              </label>
+            </div>
+          </div>
+          <div class="field is-grouped">
+            <div class="control is-expanded">
+              <div class="field">
+                <label class="label">Name on card</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder=""
+                    value=""
+                    required
+                  />
+                  <p class="help">Full name as displayed on card</p>
+                </div>
+              </div>
+            </div>
+            <div class="control is-expanded">
+              <div class="field">
+                <label class="label">Credit card number</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder=""
+                    value=""
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field is-grouped">
+            <div class="control">
+              <div class="field">
+                <label class="label">Expiration</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder=""
+                    value=""
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="control">
+              <div class="field">
+                <label class="label">CVV</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder=""
+                    value=""
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <button
+            i18n="@@btnCreateOrganization"
+            class="button is-primary is-fullwidth"
+            type="submit"
+          >
+            Create organization
+          </button>
+        </form>
+      </div>
+      <div class="column is-4">
+        <h4 class="title is-4">
+          <span i18n="@@organizationMembers">Organization members</span
+          ><span class="tag is-info is-pulled-right">2</span>
+        </h4>
+        <div class="list is-hoverable">
+          <a class="list-item">
+            <div class="level is-mobile">
+              <div class="level-left">
+                <div class="level-item">
+                  <div>
+                    <h6 class="title is-6">Miloš Spasojević</h6>
+                    <small>milos.s.pfc@gmail.com</small>
+                  </div>
+                </div>
+              </div>
+            </div></a
+          >
+          <div class="list-item has-background-white">
+            <div class="level is-mobile">
+              <div class="level-left">
+                <div class="level-item">
+                  <div>
+                    <h6 class="title is-6">Ljubomir Cvetković</h6>
+                    <small>ljubomir.cvetkovic@itcorner.rs</small>
+                  </div>
+                </div>
+              </div>
+              <a class="level-right"><span>X</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <form>
+              <div class="field">
+                <label i18n="@@invitePeopleToOrganization"
+                  >Invite more people to join your organization:</label
+                >
+              </div>
+              <div class="field is-grouped">
+                <div class="control is-expanded">
+                  <input
+                    i18n="@@emailPlaceholder"
+                    class="input"
+                    type="text"
+                    placeholder="someone@nqframework.com"
+                  />
+                </div>
+                <div class="control">
+                  <button
+                    class="button is-info"
+                    i18n="@@btnInvite"
+                    type="submit"
+                  >
+                    Invite
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
