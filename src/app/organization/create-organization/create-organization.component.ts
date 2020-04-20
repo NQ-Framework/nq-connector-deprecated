@@ -4,6 +4,7 @@ import { FormBuilder } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { first, map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-organization',
@@ -22,6 +23,7 @@ export class CreateOrganizationComponent implements OnInit {
     private fb: FormBuilder,
     private firestore: AngularFirestore,
     private auth: AngularFireAuth,
+    private router: Router,
   ) {}
   ngOnInit() {}
 
@@ -35,7 +37,8 @@ export class CreateOrganizationComponent implements OnInit {
         const docValues = this.organizationForm.value;
         this.firestore
           .collection<Organization>('organizations')
-          .add({ ...docValues, createdBy: uid });
+          .add({ ...docValues, members: [uid], createdBy: uid });
+        this.router.navigate(['organization']);
       });
   }
 }

@@ -1,38 +1,55 @@
 <nav class="navbar">
   <div class="container">
     <div class="navbar-brand">
-      <a class="navbar-item" href="#">NQ Framework</a
-      ><a
+      <a class="navbar-item" href="#">NQ Framework</a>
+      <a
         class="navbar-burger"
         role="button"
         aria-label="menu"
         aria-expanded="false"
-        ><span aria-hidden="true"></span><span aria-hidden="true"></span
-        ><span aria-hidden="true"></span
-      ></a>
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
     </div>
     <div class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item" href="#">Features</a
-        ><a class="navbar-item" href="#">Enterprise</a
-        ><a class="navbar-item" href="#">Support</a>
+        <a
+          routerLink="organization"
+          class="navbar-item"
+          i18n="@@organization"
+          href="#"
+        >
+          Organization
+        </a>
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">ICO</a>
+          <!-- <a class="navbar-link">ICO</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item navbar-item-dropdown" href="#">Whitepaper</a
-            ><a class="navbar-item navbar-item-dropdown" href="#">Token</a>
-          </div>
+            <a class="navbar-item navbar-item-dropdown" href="#">Whitepaper</a>
+            <a class="navbar-item navbar-item-dropdown" href="#">Token</a>
+          </div> -->
         </div>
       </div>
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <a
-              i18n="Login button found in the navigation menu@@loginButtonText"
-              class="button is-primary"
-              href="auth"
-              >Log in or create an account</a
+            <ng-container
+              i18n="@@loggedInUser"
+              *ngIf="auth.user | async as user; else noUser"
             >
+              Logged in user: {{ user.displayName || user.email }}
+            </ng-container>
+            <ng-template #noUser>
+              <a
+                i18n="
+                  Login button found in the navigation menu@@loginButtonText"
+                class="button is-primary"
+                href="auth"
+              >
+                Log in or create an account
+              </a>
+            </ng-template>
           </div>
         </div>
       </div>
