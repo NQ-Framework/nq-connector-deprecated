@@ -4,6 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { OrganizationComponent } from './organization.component';
 import { CreateOrganizationComponent } from './create-organization/create-organization.component';
 
+/* istanbul ignore file */
+
 const routes: Routes = [
   {
     path: 'create',

@@ -5,6 +5,7 @@ import { ElectronService } from 'ngx-electron';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
+/* istanbul ignore file */
 export class AppComponent {
   title = 'nq-connector';
 

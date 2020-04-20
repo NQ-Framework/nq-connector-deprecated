@@ -2,6 +2,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LanguagePickerComponent } from './language-picker.component';
 
+const fakeSetItem = (key: string, value: any) => {
+  console.log('called with', key, value);
+};
+
 describe('LanguagePickerComponent', () => {
   let component: LanguagePickerComponent;
   let fixture: ComponentFixture<LanguagePickerComponent>;
@@ -20,5 +24,13 @@ describe('LanguagePickerComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should change language', () => {
+    const reloadSpy = spyOn(component, 'reloadLocation').and.returnValue();
+    const localStorageSpy = spyOn(localStorage, 'setItem').and.returnValue();
+    component.changeLanguage('rs');
+    expect(reloadSpy).toHaveBeenCalled();
+    expect(localStorageSpy).toHaveBeenCalledWith('language_code', 'rs');
   });
 });

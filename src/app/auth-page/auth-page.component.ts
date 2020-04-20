@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
 
+// ToDo: this whole class is a temporary first pass implementation
+/* istanbul ignore file */
 @Component({
   selector: 'app-auth-page',
   templateUrl: './auth-page.component.html',

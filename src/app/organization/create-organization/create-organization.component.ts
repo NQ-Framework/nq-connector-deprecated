@@ -35,6 +35,8 @@ export class CreateOrganizationComponent implements OnInit {
       )
       .subscribe((uid) => {
         const docValues = this.organizationForm.value;
+        const t = this.firestore.collection('omg');
+        t.add({});
         this.firestore
           .collection<Organization>('organizations')
           .add({ ...docValues, members: [uid], createdBy: uid });

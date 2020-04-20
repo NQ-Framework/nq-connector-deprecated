@@ -21,4 +21,10 @@ describe('AnimationComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should set animation loaded when animation loads', () => {
+    expect(component.animationLoaded).toBeFalsy();
+    component.lottieReady();
+    expect(component.animationLoaded).toBeTruthy();
+  });
 });

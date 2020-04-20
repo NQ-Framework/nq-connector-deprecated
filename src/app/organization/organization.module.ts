@@ -5,6 +5,8 @@ import { OrganizationComponentRoutingModule } from './organization-routing.modul
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CreateOrganizationComponent } from './create-organization/create-organization.component';
 
+/* istanbul ignore file */
+
 @NgModule({
   declarations: [OrganizationComponent, CreateOrganizationComponent],
   imports: [

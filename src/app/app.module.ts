@@ -19,6 +19,8 @@ import { CommonModule } from './common/common.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorService } from './interceptor.service';
 
+/* istanbul ignore file */
+
 @NgModule({
   declarations: [
     AppComponent,

@@ -10,6 +10,7 @@ interface Item {
   firebaseId: string;
 }
 
+/* istanbul ignore file */
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',

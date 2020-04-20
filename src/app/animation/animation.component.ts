@@ -11,9 +11,7 @@ export class AnimationComponent implements OnInit {
 
   animationLoaded = false;
 
-  constructor() {
-    console.log(this.animationSource);
-  }
+  constructor() {}
 
   lottieReady() {
     this.animationLoaded = true;

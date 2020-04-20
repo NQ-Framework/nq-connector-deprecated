@@ -5,6 +5,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AuthPageComponent } from './auth-page/auth-page.component';
 import { AuthGuard } from './auth.guard';
 
+/* istanbul ignore file */
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'auth', component: AuthPageComponent },
