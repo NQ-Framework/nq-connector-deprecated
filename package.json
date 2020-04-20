@@ -20,7 +20,7 @@
     "build:electron": "tsc -p ./electron/tsconfig.json",
     "format": "prettier --write \"src/**/*.ts\"",
     "test": "ng test",
-    "test:ci": "ng test --watch=false --browsers=ChromeHeadless",
+    "test:ci": "ng test --no-watch --no-progress --browsers=ChromeHeadless",
     "lint": "npm run lint:ui && npm run lint:electron",
     "lint:ui": "ng lint",
     "lint:electron": "tslint -p ./electron/tsconfig.json -c ./tslint.json",
