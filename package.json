@@ -75,7 +75,7 @@
     "@angular/platform-browser": "~9.1.2",
     "@angular/platform-browser-dynamic": "~9.1.2",
     "@angular/router": "~9.1.2",
-    "@locl/core": "0.0.1-beta.2",
+    "@locl/core": "^1.0.0-rc.1",
     "@nqframework/models": "^1.0.0",
     "@teamhive/lottie-player": "^1.0.0",
     "angular-mocks": "^1.7.9",
@@ -90,7 +90,7 @@
   "devDependencies": {
     "@angular-devkit/architect": "~0.900",
     "@angular-devkit/build-angular": "~0.901.1",
-    "@angular/cli": "~9.1.1",
+    "@angular/cli": "^9.1.1",
     "@angular/compiler-cli": "~9.1.2",
     "@angular/language-service": "~9.1.2",
     "@electron-forge/cli": "6.0.0-beta.50",
