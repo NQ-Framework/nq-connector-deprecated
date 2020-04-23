@@ -55,7 +55,7 @@ describe('Create Organization Component', () => {
   it('should call into firestore on valid form submit', fakeAsync(() => {
     const fixture = TestBed.createComponent(CreateOrganizationComponent);
     const component = fixture.componentInstance;
-    component.organizationForm.patchValue({ name: 'ime' });
+    component.organizationForm.patchValue({ name: 'a name' });
     const spy1 = spyOn(mockFirestore, 'collection');
     const collection = { add: () => {} };
     spy1.and.returnValue(collection);
@@ -63,8 +63,8 @@ describe('Create Organization Component', () => {
 
     component.submitForm();
     tick();
-    expect(spy2).toHaveBeenCalledWith(
-      jasmine.objectContaining({ name: 'ime' }),
-    );
+    spy2.calls.mostRecent().args.map((arg: any) => {
+      expect(arg.name).toBe('a name');
+    });
   }));
 });
