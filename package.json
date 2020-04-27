@@ -81,7 +81,7 @@
     "angular-mocks": "^1.7.9",
     "bulma": "^0.8.2",
     "electron-squirrel-startup": "^1.0.0",
-    "firebase": "^7.14.1",
+    "firebase": "^7.14.2",
     "ngx-electron": "^2.2.0",
     "rxjs": "~6.5.5",
     "tslib": "^1.10.0",
@@ -120,7 +120,7 @@
     "protractor": "^5.4.4",
     "puppeteer": "^3.0.1",
     "ts-node": "~8.3.0",
-    "tslint": "^6.1.1",
+    "tslint": "^6.1.2",
     "typescript": "~3.8.3"
   }
 }
