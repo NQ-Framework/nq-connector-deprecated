@@ -18,6 +18,7 @@ import { AuthPageComponent } from './auth-page/auth-page.component';
 import { CommonModule } from './common/common.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorService } from './interceptor.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /* istanbul ignore file */
 
@@ -32,6 +33,7 @@ import { InterceptorService } from './interceptor.service';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     NgxElectronModule,
     AnimationModule,

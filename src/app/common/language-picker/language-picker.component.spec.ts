@@ -2,10 +2,6 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LanguagePickerComponent } from './language-picker.component';
 
-const fakeSetItem = (key: string, value: any) => {
-  console.log('called with', key, value);
-};
-
 describe('LanguagePickerComponent', () => {
   let component: LanguagePickerComponent;
   let fixture: ComponentFixture<LanguagePickerComponent>;

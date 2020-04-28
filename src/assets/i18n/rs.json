@@ -10,13 +10,16 @@
     "addressPlaceholder": "Beogradska 1234",
     "address": "Adresa {$TAG_INPUT}",
     "address2Placeholder": "Sprat, stan",
-    "address2": "Adresa 2 {$TAG_INPUT}",
+    "address2": "Adresa Nastavak {$TAG_INPUT}",
     "country": " Država ",
     "btnCreateOrganization": " Kreiraj Organizaciju ",
     "organizationMembers": "Članovi organizacije",
     "invitePeopleToOrganization": "Pozovite još članova u organizaciju",
     "btnInvite": " Pozovi ",
     "organization": " Organizacija ",
-    "loggedInUser": " Ulogovani korisnik: {$INTERPOLATION} "
+    "loggedInUser": " Ulogovani korisnik: {$INTERPOLATION} ",
+    "basicInformation": "Osnovni podaci ",
+    "loading": " Učitavanje... ",
+    "members": "Članovi:"
   }
 }

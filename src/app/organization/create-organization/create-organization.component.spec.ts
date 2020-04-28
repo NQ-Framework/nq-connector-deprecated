@@ -10,9 +10,7 @@ import { Routes } from '@angular/router';
 const mockFirestore = {
   collection: () => {
     return {
-      add: () => {
-        console.log('called');
-      },
+      add: () => {},
     };
   },
 };

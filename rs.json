@@ -17,6 +17,9 @@
     "btnCreateOrganization": " Create organization ",
     "organizationMembers": "Organization members",
     "invitePeopleToOrganization": " Invite more people to join your organization: ",
-    "btnInvite": " Invite "
+    "btnInvite": " Invite ",
+    "basicInformation": "Basic information",
+    "members": "Members:",
+    "loading": " Loading...\n"
   }
 }

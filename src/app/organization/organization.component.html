@@ -1,101 +1,64 @@
-<p>organization page</p>
-<a routerLink="create" i18n="@@createOrganization">Create an Organization</a>
-<div *ngFor="let organization of organizations$ | async">
-  Organizacija: {{ organization.name }}
-</div>
-
-<section class="section">
-  <div class="container">
-    <div class="columns is-desktop is-vcentered">
-      <div class="column is-6-desktop">
-        <img
-          src="https://bulma.dev/placeholder/pictures/bg_4-3.svg?primary=00d1b2"
-          alt=""
-        />
-      </div>
-      <div class="column is-6-desktop">
-        <div class="level is-mobile">
-          <div class="level-left">
-            <a class="level-item" href="#">
-              <img src="placeholder/icons/unicorn.svg" alt="" />
-            </a>
-            <a class="level-item" href="#">
-              <img src="placeholder/icons/unicorn.svg" alt="" />
-            </a>
-            <a class="level-item" href="#">
-              <img src="placeholder/icons/unicorn.svg" alt="" />
-            </a>
-            <a class="level-item" href="#">
-              <img src="placeholder/icons/unicorn.svg" alt="" />
-            </a>
-            <a class="level-item" href="#">
-              <img src="placeholder/icons/unicorn.svg" alt="" />
-            </a>
+<!-- <p>organization page</p> -->
+<p-button
+  type="button"
+  routerLink="create"
+  i18n-label="@@createOrganization"
+  label="Create an Organization"
+></p-button>
+<div *ngIf="organizations$ | async as organizations; else loading">
+  <div *ngFor="let organization of organizations">
+    <p-card [header]="organization.name">
+      <p-panel i18n-header="@@basicInformation" header="Basic information">
+        <div class="p-grid">
+          <div i18n="@@organizationName" class="p-col-4">
+            Organization Name:
           </div>
+          <div class="p-col-8">{{ organization.name }}</div>
+          <div i18n="@@email" class="p-col-4">
+            Email:
+          </div>
+          <div class="p-col-8">{{ organization.email }}</div>
+          <div i18n="@@address" class="p-col-4">
+            Address first line:
+          </div>
+          <div class="p-col-8">{{ organization.address1 }}</div>
+          <div i18n="@@address2" class="p-col-4">
+            Address second line:
+          </div>
+          <div class="p-col-8">{{ organization.address2 }}</div>
         </div>
-        <h2 class="title is-spaced">Official Pied Piper T-Shirt</h2>
-        <p class="subtitle">
-          This wonderful green shirt will make you an evangelist of Pied Pipers'
-          world-changing technology. It will make you stand out anywhere you go
-          - so say yes to decentralization, and say yes to our official Pied
-          Piper swag.
-        </p>
-        <div class="level is-mobile">
-          <div class="level-left">
-            <a class="level-item" href="#">
-              <div class="tag is-primary">&nbsp;</div>
-            </a>
-            <a class="level-item" href="#">
-              <div class="tag is-danger">&nbsp;</div>
-            </a>
-            <a class="level-item" href="#">
-              <div class="tag is-dark">&nbsp;</div>
-            </a>
-            <a class="level-item" href="#">
-              <div class="tag is-info">&nbsp;</div>
-            </a>
-          </div>
-        </div>
-        <div class="columns">
-          <div class="column is-half">
-            <div class="field is-horizontal">
-              <div class="field-label is-normal">
-                <label class="label">$399</label>
-              </div>
-              <div class="field-body">
-                <div class="field">
-                  <div class="control">
-                    <input class="input" type="number" placeholder="1" />
-                  </div>
-                </div>
-                <div class="field">
-                  <div class="control">
-                    <button class="button is-primary">Buy Now!</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr />
-        <div class="level is-mobile">
-          <div class="level-left">
-            <div class="level-item"><a href="#">Add to favorites</a></div>
-          </div>
-          <div class="level-right">
-            <div class="level-item">Share</div>
-            <a class="level-item" href="#">
-              <img src="placeholder/icons/facebook-f.svg" alt="" />
-            </a>
-            <a class="level-item" href="#">
-              <img src="placeholder/icons/twitter.svg" alt="" />
-            </a>
-            <a class="level-item" href="#">
-              <img src="placeholder/icons/instagram.svg" alt="" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+        <p i18n="@@members">Members:</p>
+        <p-table [value]="organization.members">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Status</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-member>
+            <tr>
+              <td>{{ member.displayName }}</td>
+              <td>{{ member.email }}</td>
+              <td>{{ member.role }}</td>
+              <td>{{ member.status }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </p-panel>
+    </p-card>
   </div>
-</section>
+</div>
+<ng-template i18n="@@loading" #loading>
+  Loading...
+</ng-template>
+
+<!-- <p-autoComplete
+  [(ngModel)]="selected"
+  [suggestions]="results"
+  [multiple]="true"
+  emptyMessage="No value found"
+  (completeMethod)="search($event)"
+></p-autoComplete>
+Selektovani: {{ selected && selected.toString() }} -->
