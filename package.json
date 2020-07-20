@@ -1,6 +1,6 @@
 {
   "name": "nq-connector",
-  "version": "0.4.19",
+  "version": "0.4.20",
   "author": "NQ Framework",
   "description": "A client application for managing nq framework and connecting to the on premise database",
   "main": "dist/electron/main",
