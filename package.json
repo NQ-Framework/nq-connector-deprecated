@@ -109,7 +109,7 @@
     "codelyzer": "^5.1.2",
     "electron": "^8.4.0",
     "electron-packager": "^14.2.1",
-    "firebase-tools": "^8.6.0",
+    "firebase-tools": "^12.0.0",
     "fuzzy": "^0.1.3",
     "inquirer": "^6.2.2",
     "inquirer-autocomplete-prompt": "^1.0.1",
